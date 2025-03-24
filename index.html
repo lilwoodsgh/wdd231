@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to wwd231. Learn web and software development and achieve your goals with our comprehensive course materials and resources.">
+  <meta name="author" content="Patamiah Elorm Godwin">
+  <title>Welcome to wwd231</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/dates.js" defer></script>
+  <script src="scripts/courses.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <img src="images/godwin.jpeg" alt="Instructor Photo" class="logo">
+        <div class="header-text">
+          <h1>Patamiah <span>Elorm Godwin</span></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="Main Navigation">
+    <ul id="nav-links">
+      <li><a href="#Home" class="active">Home</a></li>
+      <li><a href="#Chamber">Chamber</a></li>
+      <li><a href="#https://github.com/lilwoodsgh">GitHub Profile</a></li>
+      <li><a href="#https://www.linkedin.com/in/godwin-patamiah-776144264/">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="Home">
+      <div class="home-container">
+        <div class="column">
+          <h3>Course Work</h3>
+          <ul>
+            <li>HTML Basics</li>
+            <li>CSS Essentials</li>
+            <li>JavaScript Fundamentals</li>
+          </ul>
+        </div>
+        <div class="column">
+          <h3>CapeCoast, Ghana</h3>
+          <img src="images/capecoast.jpeg" alt="capecoast castle">
+          <p>Capecoast Castle </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses">
+      <h2>Web and Computer Programming Certificate</h2>
+      <div class="filter-buttons">
+        <button id="filter-all">All</button>
+        <button id="filter-cse">CSE</button>
+        <button id="filter-wdd">WDD</button>
+      </div>
+      <div id="course-cards"></div>
+      <p id="total-credits"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="currentyear"></span> Patamiah Elorm Godwin - Accra, Ghana.</p>
+    <p id="lastModified"></p>
+  </footer>
+
+  <script src="scripts/lastModified.js"></script>
+</body>
+</html>
