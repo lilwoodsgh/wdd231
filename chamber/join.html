@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the business directory of the Accra Chamber of Commerce.">
+  <meta name="author" content="Pataniah Elorm Godwin">
+  <title>Accra Chamber of Commerce - Directory</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <meta property="og:title" content="Accra Chamber of Commerce - Directory">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/social-preview.png">
+  <meta property="og:url" content="http://Accrachamber.com/directory.html">
+  <link rel="stylesheet" href="../chamber/styles/style.css">
+  <link rel="stylesheet" href="../chamber/styles/styles.css">
+  <script src="../chamber/scripts/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-logo">
+      <img src="images/logo.jpg" alt="Logo" class="logo"; style="height: 50px;">
+      <h1>Accra Chamber of Commerce</h1>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="directory.html" class="active">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <form action="thankyou.html" method="get" class="form-container">
+      <h2 class="form-title">Join the Chamber</h2>
+      <label class="form-label">
+        <span>First Name:</span>
+        <input type="text" name="first-name" title="Enter your first name" autocomplete="given-name" required>
+      </label>
+      <label class="form-label">
+        <span>Last Name:</span>
+        <input type="text" name="last-name" title="Enter your last name" autocomplete="family-name" required>
+      </label>
+      <label class="form-label">
+        <span>Organizational Title:</span>
+        <input type="text" name="organization-title" title="Enter your organizational title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
+      </label>
+      <label class="form-label">
+        <span>Email:</span>
+        <input type="email" name="email" title="Enter your email address" autocomplete="email" placeholder="example@domain.com" required>
+      </label>
+      <label class="form-label">
+        <span>Mobile Phone:</span>
+        <input type="tel" name="mobile-phone" title="Enter your mobile phone number" autocomplete="tel" required>
+      </label>
+      <label class="form-label">
+        <span>Business/Organization Name:</span>
+        <input type="text" name="organization" title="Enter your business/organization name" autocomplete="organization" required>
+      </label>
+      <label class="form-label">
+        <span>Membership Level:</span>
+        <select name="membership-level" title="Select your membership level" required>
+          <option value="np">NP Membership</option>
+          <option value="bronze">Bronze Membership</option>
+          <option value="silver">Silver Membership</option>
+          <option value="gold">Gold Membership</option>
+        </select>
+      </label>
+      <label class="form-label">
+        <span>Business/Organization Description:</span>
+        <textarea name="organization-description" title="Describe your business/organization"></textarea>
+      </label>
+      <input type="hidden" name="timestamp" id="timestamp">
+      <input type="submit" value="Submit" class="submit-button">
+    </form>
+
+    <section class="membership-section">
+      <h2 class="membership-title">Membership Levels</h2>
+      <div class="membership-card" id="np-card">
+        <h3>NP Membership</h3>
+        <a href="#np-modal">Learn More</a>
+      </div>
+      <div class="membership-card" id="bronze-card">
+        <h3>Bronze Membership</h3>
+        <a href="#bronze-modal">Learn More</a>
+      </div>
+      <div class="membership-card" id="silver-card">
+        <h3>Silver Membership</h3>
+        <a href="#silver-modal">Learn More</a>
+      </div>
+      <div class="membership-card" id="gold-card">
+        <h3>Gold Membership</h3>
+        <a href="#gold-modal">Learn More</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modals -->
+  <div id="np-modal" class="modal">
+    <div class="modal-content">
+      <h3>NP Membership Benefits</h3>
+      <p>No fee. Access to basic resources and networking events.</p>
+      <button onclick="closeModal('np-modal')">Close</button>
+    </div>
+  </div>
+  <div id="bronze-modal" class="modal">
+    <div class="modal-content">
+      <h3>Bronze Membership Benefits</h3>
+      <p>Discounted events, basic advertising, and training sessions.</p>
+      <button onclick="closeModal('bronze-modal')">Close</button>
+    </div>
+  </div>
+  <div id="silver-modal" class="modal">
+    <div class="modal-content">
+      <h3>Silver Membership Benefits</h3>
+      <p>All Bronze benefits plus premium advertising and exclusive events.</p>
+      <button onclick="closeModal('silver-modal')">Close</button>
+    </div>
+  </div>
+  <div id="gold-modal" class="modal">
+    <div class="modal-content">
+      <h3>Gold Membership Benefits</h3>
+      <p>All Silver benefits plus spotlight positions and VIP access.</p>
+      <button onclick="closeModal('gold-modal')">Close</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('timestamp').value = new Date().toISOString();
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+    }
+
+    document.querySelectorAll('.membership-card a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const modalId = e.target.getAttribute('href').substring(1);
+        document.getElementById(modalId).style.display = 'block';
+      });
+    });
+  </script>
+
+  <style>
+    .membership-card {
+      border: 1px solid #ccc;
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 16px;
+      cursor: pointer;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 24px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <footer class="footer">
+    <p>Accra Chamber of Commerce</p>
+    <p>House No. 5 Proton Str, Bortianor, Accra</p>
+    <p>Email: <a href="mailto:info@accrachamber.org">info@accrachamber.org</a></p>
+    <p>Phone: +233 560 477 204 </p>
+    <div class="social-icons">
+      <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
+      <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
+      <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+    </div>
+    <p>WDD231 Class Project - Patamiah Elorm Godwin </p>
+    <p>&copy; 2025 Accra Chamber of Commerce</p>
+    <p id="last-modified"></p>
+    <script>
+      document.getElementById('last-modified').textContent = `Last Modification: ${document.lastModified}`;
+      const gridViewButton = document.getElementById('grid-view');
+      const listViewButton = document.getElementById('list-view');
+      const directoryContainer = document.getElementById('directory-container');
+
+      gridViewButton.addEventListener('click', () => {
+        directoryContainer.style.display = 'flex';
+        directoryContainer.style.flexWrap = 'wrap';
+      });
+
+      listViewButton.addEventListener('click', () => {
+        directoryContainer.style.display = 'block';
+      });
+    </script>
+  </footer>
+</body>
+</html>

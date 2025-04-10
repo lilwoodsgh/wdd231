@@ -1,0 +1,101 @@
+[
+  {
+    "name": "Tech Solutions",
+    "address": "123 Tech Lane, Silicon Valley, CA",
+    "phone": "123-456-7890",
+    "website": "https://techsolutions.com",
+    "image": "techsolutions.png",
+    "membershipLevel": 3,
+    "description": "Innovative tech solutions for businesses."
+  },
+  {
+    "name": "Green Earth Co.",
+    "address": "456 Greenway Blvd, Portland, OR",
+    "phone": "987-654-3210",
+    "website": "https://greenearthco.com",
+    "image": "greenearthco.png",
+    "membershipLevel": 2,
+    "description": "Eco-friendly products and services."
+  },
+  {
+    "name": "Health First",
+    "address": "789 Wellness St, Austin, TX",
+    "phone": "555-123-4567",
+    "website": "https://healthfirst.com",
+    "image": "healthfirst.png",
+    "membershipLevel": 1,
+    "description": "Your partner in health and wellness."
+  },
+  {
+    "name": "EduWorld",
+    "address": "321 Knowledge Ave, Boston, MA",
+    "phone": "444-555-6666",
+    "website": "https://eduworld.com",
+    "image": "eduworld.png",
+    "membershipLevel": 3,
+    "description": "Educational resources for all ages."
+  },
+  {
+    "name": "AutoPro",
+    "address": "654 Motorway Dr, Detroit, MI",
+    "phone": "333-777-8888",
+    "website": "https://autopro.com",
+    "image": "autopro.png",
+    "membershipLevel": 2,
+    "description": "Automotive services and solutions."
+  },
+  {
+    "name": "Foodies Delight",
+    "address": "987 Gourmet Rd, New York, NY",
+    "phone": "222-999-0000",
+    "website": "https://foodiesdelight.com",
+    "image": "foodiesdelight.png",
+    "membershipLevel": 1,
+    "description": "Delicious food and catering services."
+  },
+  {
+    "name": "Travel Experts",
+    "address": "159 Adventure Blvd, Denver, CO",
+    "phone": "111-222-3333",
+    "website": "https://travelexperts.com",
+    "image": "travelexperts.png",
+    "membershipLevel": 3,
+    "description": "Your guide to amazing travel experiences."
+  }, 
+  {
+    "name": "Fashion Hub",
+    "address": "753 Style St, Los Angeles, CA",
+    "phone": "888-777-6666",
+    "website": "https://fashionhub.com",
+    "image": "fashionhub.png",
+    "membershipLevel": 2,
+    "description": "Latest trends in fashion and accessories."
+  },
+  {
+    "name": "Home Comforts",
+    "address": "852 Cozy Ln, Seattle, WA",
+    "phone": "444-333-2222",
+    "website": "https://homecomforts.com",
+    "image": "homecomforts.png",
+    "membershipLevel": 1,
+    "description": "Home goods and comfort solutions."
+  },
+  {
+    "name": "Fitness Pro",
+    "address": "963 Health St, Miami, FL",
+    "phone": "555-444-3333",
+    "website": "https://fitnesspro.com",
+    "image": "fitnesspro.png",
+    "membershipLevel": 2,
+    "description": "Fitness equipment and training services."
+  },
+  {
+    "name": "Artistry Creations",
+    "address": "147 Art St, San Francisco, CA",
+    "phone": "666-555-4444",
+    "website": "https://artistrycreations.com",
+    "image": "artistrycreations.png",
+    "membershipLevel": 3,
+    "description": "Unique art pieces and custom designs."
+  }
+]
