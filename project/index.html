@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduConnect CRM Website Plan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">EduConnect</div>
+            <nav></nav>
+                <a href="#">Home</a>
+                <a href="#">Dashboard</a>
+                <a href="#">Messages</a>
+                <a href="#">Student Profiles</a>
+                <a href="#">Reports</a>
+                <a href="#">Settings</a>
+            </nav>
+            <div class="user-profile">Profile</div>
+        </header>
+
+        <!-- Project Plan Details -->
+        <section class="plan-section">
+            <h2>Site Name</h2>
+            <p><strong>Site Name:</strong> EduConnect</p>
+            <p>This name was chosen to represent a centralized system for managing school-related information, including student data, staff communication, and reports.</p>
+
+            <h2>Site Purpose</h2>
+            <p>The purpose of the site is to provide a hub for school administrators and teachers to manage student profiles, communicate effectively, and generate reports related to school performance.</p>
+
+            <h2>Scenarios</h2>
+            <p><strong>Scenario 1:</strong> A teacher wants to quickly look up a student's profile to check their grades and attendance history.</p>
+            <p><strong>Scenario 2:</strong> An administrator needs to send out a message to all teachers about a school-wide event.</p>
+
+            <h2>Color Schema</h2>
+            <p><strong>Primary Color:</strong> #1A237E (Dark Blue) – Used for headers, navigation bar, and call-to-action buttons.</p>
+            <p><strong>Secondary Color:</strong> #F5F5F5 (Light Gray) – Used as the background color for the main sections of the page.</p>
+            <p><strong>Accent Color:</strong> #4CAF50 (Green) – Used for buttons or highlighted actions like "Send Message" or "Generate Report".</p>
+
+            <h2>Typography</h2>
+            <p><strong>Font 1:</strong> 'Roboto' – Used for general body text, menus, and navigation.</p>
+            <p><strong>Font 2:</strong> 'Lora' – Used for headings and titles to create a clear contrast with the body text.</p>
+        </section>
+
+        <!-- Wireframe -->
+        <section class="plan-section">
+            <h2>Wireframe</h2>
+            <h3>Desktop View</h3>
+            <p>The desktop view will have the following structure:</p>
+            <ul>
+                <li><strong>Header:</strong> Logo on the left, navigation bar in the middle, and user profile on the right.</li>
+                <li><strong>Main Content:</strong> Dashboard overview on the left side with stats and recent updates; Sidebar with quick links on the right.</li>
+                <li><strong>Footer:</strong> Contact information and quick links to terms of service and privacy policy.</li>
+            </ul>
+
+            <h3>Mobile View</h3>
+            <p>The mobile view will have a simplified layout with:</p>
+            <ul>
+                <li><strong>Header:</strong> Logo centered, hamburger menu on the left, user profile on the right.</li>
+                <li><strong>Main Content:</strong> Dashboard overview stacked vertically with key stats and actions. Sidebar menu collapsed.</li>
+                <li><strong>Footer:</strong> Simplified footer with links to contact info and policies.</li>
+            </ul>
+        </section>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Dashboard -->
+            <div class="dashboard">
+                <h2>Dashboard Overview</h2>
+                <p>Most recent activities will be displayed here.</p>
+                <p>Quick stats: Students: 120, Upcoming Deadlines: 5, Messages: 2</p>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <h3>Quick Links</h3>
+                <a href="#">Student Profiles</a>
+                <a href="#">Teachers</a>
+                <a href="#">Events</a>
+                <a href="#">Communication</a>
+                <a href="#">Reports</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Contact Info: info@EduConnect.com | Privacy Policy | Terms of Service</p>
+            <p>Last Modified: <script>
+                const lastModified = new Date(document.lastModified);
+                document.write(`${lastModified.toLocaleDateString()} ${lastModified.toLocaleTimeString()}`);
+            </script></p>
+        </footer>
+    </div>
+
+</body>
+</html>

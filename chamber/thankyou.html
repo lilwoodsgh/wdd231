@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - Accra Chamber of Commerce</title>
+  <link rel="stylesheet" href="../chamber/styles/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    .thank-you-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .thank-you-container h1 {
+      color: #333;
+      text-align: center;
+    }
+    .thank-you-container p {
+      font-size: 16px;
+      color: #555;
+      margin: 10px 0;
+    }
+    .thank-you-container .highlight {
+      font-weight: bold;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="thank-you-container">
+    <h1>Thank You for Joining!</h1>
+    <p><span class="highlight">First Name:</span> <span id="first-name"></span></p>
+    <p><span class="highlight">Last Name:</span> <span id="last-name"></span></p>
+    <p><span class="highlight">Email:</span> <span id="email"></span></p>
+    <p><span class="highlight">Mobile Phone:</span> <span id="mobile-phone"></span></p>
+    <p><span class="highlight">Business/Organization Name:</span> <span id="organization"></span></p>
+    <p><span class="highlight">Submission Date:</span> <span id="timestamp"></span></p>
+  </div>
+  <button onclick="window.location.href='../index.html'" style="display: block; margin: 20px auto; padding: 10px 20px; background-color: #007BFF; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+    Back to Home
+  </button>
+  <script>
+    // Extract query parameters from the URL
+    const params = new URLSearchParams(window.location.search);
+
+    // Populate the fields with the submitted data
+    document.getElementById('first-name').textContent = params.get('first-name') || 'N/A';
+    document.getElementById('last-name').textContent = params.get('last-name') || 'N/A';
+    document.getElementById('email').textContent = params.get('email') || 'N/A';
+    document.getElementById('mobile-phone').textContent = params.get('mobile-phone') || 'N/A';
+    document.getElementById('organization').textContent = params.get('organization') || 'N/A';
+    document.getElementById('timestamp').textContent = params.get('timestamp') || 'N/A';
+  </script>
+</body>
+</html>
