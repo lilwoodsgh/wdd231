@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the best places in Accra Chamber of Commerce.">
+  <meta name="author" content="Pataniah Elorm Godwin">
+  <title>Discover - Accra Chamber of Commerce</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../chamber/styles/style.css">
+  <link rel="stylesheet" href="../chamber/styles/styles.css">
+  <script src="../chamber/scripts/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-logo">
+      <img src="images/logo.jpg" alt="Logo" class="logo" style="height: 50px;">
+      <h1>Accra Chamber of Commerce</h1>
+    </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../chamber/directory.html">Directory</a></li>
+        <li><a href="../chamber/join.html">Join</a></li>
+        <li><a href="../chamber/discover.html" class="active">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <!-- Sidebar for last visit message -->
+    <aside class="sidebar">
+      <div id="visitor-message"></div>
+    </aside>
+
+    <section class="discover-container" id="discover-container">
+      <!-- Grid layout for cards -->
+      <div class="discover-grid">
+        <!-- Item Cards (8 items) -->
+        <div class="card" id="item1">
+          <h2>Live Music Concerts</h2>
+          <figure>
+            <img src="images/1.jpg" alt="Item 1" class="item-img">
+          </figure>
+          <address>Bortianor, Accra</address>
+          <p>We as a commuinty have develped a strong bond for music. With young artist from here hitting big stages around the world, we always love to treat our guest with some nice sounds to make their stay or visit more exciting.</p>
+          <button>Learn More</button>
+        </div>
+        <div class="card" id="item2">
+          <h2>Relaxation </h2>
+          <figure>
+            <img src="images/2.jpg" alt="Item 2" class="item-img">
+          </figure>
+          <address>Luxury beach, Accra</address>
+          <p>We believe cleanliness is next to Godliness and thus we make sure we provide the most serene, clean and safe environment for all tourist whoo deem to visit my community for relaxation.</p>
+          <button>Learn More</button>
+        </div>
+        <div class="card" id="item3">
+          <h2>Surfing</h2>
+          <figure>
+            <img src="images/3.jpg" alt="Item 3" class="item-img">
+          </figure>
+          <address>Kokrobite, Accra</address>
+          <p>Once a while surf expects from far and near come around to surf our waters. this improves andgenerates revenue for the government and the local people. </p>
+          <button>Learn More</button>
+        </div>
+        <div class="card" id="item4">
+          <h2>Boat Carving</h2>
+          <figure>
+            <img src="images/4.jpg" alt="Item 4" class="item-img">
+          </figure>
+          <address>Tsokome, Accra</address>
+          <p>Our community is made up the best artisans you can find. Finf this as an artisan carefully carves out the shape of a boat for fishing activities.</p>
+          <button>Learn More</button>
+        </div>
+        <div class="card" id="item5">
+          <h2>Plant a Tree Project</h2>
+          <figure>
+            <img src="images/5.jpeg" alt="Item 5" class="item-img">
+          </figure>
+          <address>Bortianor, Accra</address>
+          <p>To help reduce global warming and to beautify our environment, volunteers dedicate their time to help plant trees. </p>
+          <button>Learn More</button>
+        </div>
+        <div class="card" id="item6">
+          <h2>Clean Beach Project</h2>
+          <figure>
+            <img src="images/6.jpeg" alt="Item 6" class="item-img">
+          </figure>
+          <address>Bortianor Beach, Accra</address>
+          <p>As part of our innitiative to improve green economy, we oeganize freequent cleen up exercises to help reduce filth and polution on our beaches.</p>
+          <button>Learn More</button>
+        </div>
+        <div class="card" id="item7">
+          <h2>Horse Riding</h2>
+          <figure>
+            <img src="images/7.jpg" alt="Item 7" class="item-img">
+          </figure>
+          <address>Kusum beach, Accra</address>
+          <p>For relaxation and experiencing nature, look no further than kusum beach, experience the best horse rides in our locality </p>
+          <button>Learn More</button>
+        </div>
+        <div class="card" id="item8">
+          <h2>Boat Riding</h2>
+          <figure>
+            <img src="images/8.jpeg" alt="Item 8" class="item-img">
+          </figure>
+          <address>Lakeside beach resort, Accra</address>
+          <p>Enjoy a breathtaking boat ride on our crystal clear waters </p>
+          <button>Learn More</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Accra Chamber of Commerce</p>
+    <p>House No. 5 Proton Str, Bortianor, Accra</p>
+    <p>Email: <a href="mailto:info@accrachamber.org">info@accrachamber.org</a></p>
+    <p>Phone: +233 560 477 204</p>
+    <div class="social-icons">
+      <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
+      <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
+      <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+    </div>
+    <p>WDD231 Class Project - Patamiah Elorm Godwin</p>
+    <p>&copy; 2025 Accra Chamber of Commerce</p>
+  </footer>
+
+  <script>
+    // Handle visitor message with localStorage
+    const lastVisit = localStorage.getItem("lastVisit");
+    const visitorMessage = document.getElementById('visitor-message');
+
+    if (!lastVisit) {
+      // First visit
+      visitorMessage.textContent = "Welcome! Let us know if you have any questions.";
+    } else {
+      const currentDate = new Date();
+      const lastVisitDate = new Date(Number(lastVisit));
+      const timeDiff = currentDate - lastVisitDate; // time difference in milliseconds
+      const daysAgo = Math.floor(timeDiff / (1000 * 3600 * 24));
+
+      if (daysAgo < 1) {
+        visitorMessage.textContent = "Back so soon! Awesome!";
+      } else {
+        visitorMessage.textContent = `You last visited ${daysAgo} day${daysAgo > 1 ? 's' : ''} ago.`;
+      }
+    }
+
+    // Save current date as last visit
+    localStorage.setItem("lastVisit", Date.now().toString());
+
+    // Toggle hamburger menu
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav');
+
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+
+  <style>
+    /* Basic Grid Layout */
+    .discover-grid {
+      display: grid;
+      grid-template-areas: 
+        "item1 item2 item3 item4" 
+        "item5 item6 item7 item8";
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .card button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      background-color: #45a049;
+    }
+
+    /* Small screens (320px to 640px) */
+    @media (max-width: 640px) {
+      .discover-grid {
+        grid-template-areas:
+          "item1"
+          "item2"
+          "item3"
+          "item4"
+          "item5"
+          "item6"
+          "item7"
+          "item8";
+      }
+    }
+
+    /* Medium screens (641px to 1024px) */
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .discover-grid {
+        grid-template-areas:
+          "item1 item2"
+          "item3 item4"
+          "item5 item6"
+          "item7 item8";
+      }
+    }
+
+    /* Large screens (1025px and above) */
+    @media (min-width: 1025px) {
+      .discover-grid {
+        grid-template-areas: 
+          "item1 item2 item3 item4" 
+          "item5 item6 item7 item8";
+      }
+    }
+
+    /* Image hover effect (Desktop only) */
+    .card img:hover {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Sidebar styling */
+    .sidebar {
+      position: absolute;
+      top: 100px; /* Adjusted to avoid overlapping with the navigation bar */
+      right: 20px;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Hamburger menu styles */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 30px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hamburger .bar {
+      width: 100%;
+      height: 3px;
+      background-color: #333;
+      border-radius: 5px;
+    }
+
+    .nav {
+      display: flex;
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    /* Small screens */
+    @media (max-width: 640px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav {
+        display: none;
+        flex-direction: column;
+        background-color: #f9f9f9;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      .nav.active {
+        display: flex;
+      }
+
+      .nav-list {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-list li {
+        text-align: center;
+      }
+    }
+
+    .header-logo h1 {
+      font-size: 2rem; /* Default font size for large screens */
+    }
+
+    /* Medium screens (641px to 1024px) */
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .header-logo h1 {
+        font-size: 1.5rem; /* Reduced font size for medium screens */
+      }
+    }
+
+    /* Small screens (320px to 640px) */
+    @media (max-width: 640px) {
+      .header-logo h1 {
+        font-size: 1.2rem; /* Reduced font size for small screens */
+      }
+    }
+  </style>
+</body>
+</html>
