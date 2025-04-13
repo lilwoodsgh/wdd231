@@ -27,37 +27,39 @@
       <h2>📨 Messages & Notifications</h2>
     </div>
 
-    <!-- Messages Display Section -->
-    <section class="card">
-      <h3><i class="fas fa-bullhorn"></i> Past & Current Messages</h3>
-      <ul id="messageList">
-        <li><strong>[Admin]</strong> New term starts on Monday!</li>
-        <li><strong>[Facilitator]</strong> Assignment deadline extended to Friday.</li>
-        <li><strong>[General]</strong> School will be closed on 25th for maintenance.</li>
-      </ul>
-    </section>
+    <div class="messages-grid">
+      <!-- Messages List -->
+      <section class="card messages-list">
+        <h3><i class="fas fa-bullhorn"></i> All Messages</h3>
+        <ul id="messageList">
+          <li><strong>[Admin]</strong> New term starts Monday!</li>
+          <li><strong>[Facilitator]</strong> Assignment deadline extended.</li>
+          <li><strong>[General]</strong> School maintenance on 25th.</li>
+        </ul>
+      </section>
 
-    <!-- Send New Message Section -->
-    <section class="card">
-      <h3><i class="fas fa-paper-plane"></i> Send New Message</h3>
-      <form id="messageForm">
-        <label for="recipient">📌 Select Recipient:</label>
-        <select id="recipient" required>
-          <option value="">-- Choose --</option>
-          <option value="Parent">Parent</option>
-          <option value="Management">Management</option>
-          <option value="Learner">Learner</option>
-          <option value="Facilitator">Facilitator</option>
-          <option value="Admin">Admin</option>
-          <option value="General">General Announcement</option>
-        </select>
+      <!-- New Message Form -->
+      <section class="card message-form">
+        <h3><i class="fas fa-paper-plane"></i> Compose Message</h3>
+        <form id="messageForm">
+          <label for="recipient">📌 Recipient:</label>
+          <select id="recipient" required>
+            <option value="">-- Choose --</option>
+            <option value="Parent">Parent</option>
+            <option value="Management">Management</option>
+            <option value="Learner">Learner</option>
+            <option value="Facilitator">Facilitator</option>
+            <option value="Admin">Admin</option>
+            <option value="General">General Announcement</option>
+          </select>
 
-        <label for="messageText">💬 Message:</label>
-        <textarea id="messageText" rows="4" placeholder="Type your message here..." required></textarea>
+          <label for="messageText">💬 Message:</label>
+          <textarea id="messageText" rows="5" placeholder="Type your message here..." required></textarea>
 
-        <button type="submit" class="primary-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
-      </form>
-    </section>
+          <button type="submit" class="primary-btn"><i class="fas fa-paper-plane"></i> Send</button>
+        </form>
+      </section>
+    </div>
   </main>
 
   <footer>
