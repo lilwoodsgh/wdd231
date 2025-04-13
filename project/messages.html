@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EduConnect | Messages</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="scripts/project.js"></script>
+  <script src="scripts/messages.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">EduConnect</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="login.html">Dashboard</a>
+      <a href="messages.html">Messages</a>
+      <a href="profiles.html">Student Profiles</a>
+      <a href="reports.html">Reports</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+    <div class="user-profile">Profile</div>
+  </header>
+
+  <main class="messages-page">
+    <div class="page-title">
+      <h2>📨 Messages & Notifications</h2>
+    </div>
+
+    <!-- Messages Display Section -->
+    <section class="card">
+      <h3><i class="fas fa-bullhorn"></i> Past & Current Messages</h3>
+      <ul id="messageList">
+        <li><strong>[Admin]</strong> New term starts on Monday!</li>
+        <li><strong>[Facilitator]</strong> Assignment deadline extended to Friday.</li>
+        <li><strong>[General]</strong> School will be closed on 25th for maintenance.</li>
+      </ul>
+    </section>
+
+    <!-- Send New Message Section -->
+    <section class="card">
+      <h3><i class="fas fa-paper-plane"></i> Send New Message</h3>
+      <form id="messageForm">
+        <label for="recipient">📌 Select Recipient:</label>
+        <select id="recipient" required>
+          <option value="">-- Choose --</option>
+          <option value="Parent">Parent</option>
+          <option value="Management">Management</option>
+          <option value="Learner">Learner</option>
+          <option value="Facilitator">Facilitator</option>
+          <option value="Admin">Admin</option>
+          <option value="General">General Announcement</option>
+        </select>
+
+        <label for="messageText">💬 Message:</label>
+        <textarea id="messageText" rows="4" placeholder="Type your message here..." required></textarea>
+
+        <button type="submit" class="primary-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact Info: info@educonnect.com | Privacy Policy | Terms of Service</p>
+    <p>Last Modified: 
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const modified = new Date(document.lastModified);
+          document.querySelector('footer p:last-child').textContent = `Last Modified: ${modified.toLocaleDateString()} ${modified.toLocaleTimeString()}`;
+        });
+      </script>
+    </p>
+  </footer>
+</body>
+</html>

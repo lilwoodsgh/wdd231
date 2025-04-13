@@ -24,3 +24,20 @@ if (localStorage.getItem('darkMode') === 'enabled') {
   body.classList.add('dark-mode');
   themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
 }
+
+const form = document.getElementById('messageForm');
+const messageList = document.getElementById('messageList');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const recipient = document.getElementById('recipient').value;
+  const messageText = document.getElementById('messageText').value;
+
+  if (recipient && messageText) {
+    const newMessage = document.createElement('li');
+    newMessage.innerHTML = `<strong>[${recipient}]</strong> ${messageText}`;
+    messageList.prepend(newMessage);
+    form.reset();
+    alert("Message sent successfully!");
+  }
+});
