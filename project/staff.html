@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Teacher Dashboard</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">EduConnect</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="login.html" onclick="logout()">Logout</a>
+    </nav>
+  </header>
+
+  <h2 style="padding: 1rem;">Welcome, Teacher!</h2>
+
+  <section class="stats-cards">
+    <div class="card">
+      <i class="fas fa-users"></i>
+      <h3>120</h3>
+      <p>Students</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-chalkboard-teacher"></i>
+      <h3>6</h3>
+      <p>Classes Today</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-envelope"></i>
+      <h3>7</h3>
+      <p>New Messages</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-clipboard-list"></i>
+      <h3>3</h3>
+      <p>Pending Reports</p>
+    </div>
+  </section>
+
+  <section class="dashboard-sections">
+    <div class="section">
+      <h3>📅 Upcoming Classes</h3>
+      <p>You have English and Science sessions today.</p>
+    </div>
+    <div class="section">
+      <h3>📥 Recent Messages</h3>
+      <p>1 message from the Admin and 2 from parents.</p>
+    </div>
+  </section>
+
+  <script>
+    if (!localStorage.getItem("userRole")) window.location.href = "login.html";
+    function logout() {
+      localStorage.removeItem("userRole");
+      window.location.href = "home.html";
+    }
+  </script>
+</body>
+</html>
+
+  <footer>
+    <p>Contact Info: info@educonnect.com | Privacy Policy | Terms of Service</p>
+    <p>Last Modified: <script>
+      const modified = new Date(document.lastModified);
+      document.write(`${modified.toLocaleDateString()} ${modified.toLocaleTimeString()}`);
+    </script></p>
+  </footer>
+</body>
+</html>

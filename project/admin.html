@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">EduConnect</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="login.html" onclick="logout()">Logout</a>
+    </nav>
+  </header>
+
+  <h2 style="padding: 1rem;">Welcome, Admin!</h2>
+
+  <section class="stats-cards">
+    <div class="card">
+      <i class="fas fa-user-graduate"></i>
+      <h3>320</h3>
+      <p>Total Students</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-user-tie"></i>
+      <h3>35</h3>
+      <p>Teachers</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-envelope"></i>
+      <h3>12</h3>
+      <p>New Messages</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-file-alt"></i>
+      <h3>8</h3>
+      <p>Reports Pending</p>
+    </div>
+  </section>
+
+  <section class="dashboard-sections">
+    <div class="section">
+      <h3>📊 System Overview</h3>
+      <p>All systems operational. No incidents reported.</p>
+    </div>
+    <div class="section">
+      <h3>🗂 Recent Logs</h3>
+      <p>User activity and logins from past 24hrs.</p>
+    </div>
+  </section>
+
+  <script>
+    if (!localStorage.getItem("userRole")) window.location.href = "login.html";
+    function logout() {
+      localStorage.removeItem("userRole");
+      window.location.href = "home.html";
+    }
+  </script>
+</body>
+</html>
+
+  <footer>
+    <p>Contact Info: info@educonnect.com | Privacy Policy | Terms of Service</p>
+    <p>Last Modified: <script>
+      const modified = new Date(document.lastModified);
+      document.write(`${modified.toLocaleDateString()} ${modified.toLocaleTimeString()}`);
+    </script></p>
+  </footer>
+</body>
+</html>
