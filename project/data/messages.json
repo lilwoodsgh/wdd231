@@ -1,0 +1,17 @@
+[
+  { "id": 1, "sender": "Admin", "role": "General", "message": "Welcome to EduConnect!", "date": "2025-04-10" },
+  { "id": 2, "sender": "Facilitator", "role": "Learner", "message": "Submit your assignment by Friday.", "date": "2025-04-09" },
+  { "id": 3, "sender": "Management", "role": "Teacher", "message": "Staff meeting tomorrow.", "date": "2025-04-08" },
+  { "id": 4, "sender": "Admin", "role": "General", "message": "School maintenance on 25th.", "date": "2025-04-07" },
+  { "id": 5, "sender": "Teacher", "role": "Learner", "message": "New resources uploaded.", "date": "2025-04-06" },
+  { "id": 6, "sender": "Admin", "role": "Parent", "message": "PTA meeting postponed.", "date": "2025-04-05" },
+  { "id": 7, "sender": "Facilitator", "role": "Learner", "message": "Quiz results published.", "date": "2025-04-04" },
+  { "id": 8, "sender": "Admin", "role": "Teacher", "message": "Submit term reports.", "date": "2025-04-03" },
+  { "id": 9, "sender": "Teacher", "role": "Learner", "message": "Library closed tomorrow.", "date": "2025-04-02" },
+  { "id": 10, "sender": "Facilitator", "role": "Learner", "message": "Check assignment feedback.", "date": "2025-04-01" },
+  { "id": 11, "sender": "Admin", "role": "General", "message": "Welcome message.", "date": "2025-03-31" },
+  { "id": 12, "sender": "Facilitator", "role": "Learner", "message": "Group study session.", "date": "2025-03-30" },
+  { "id": 13, "sender": "Management", "role": "Teacher", "message": "Budget review next week.", "date": "2025-03-29" },
+  { "id": 14, "sender": "Admin", "role": "Parent", "message": "Student performance updates.", "date": "2025-03-28" },
+  { "id": 15, "sender": "Teacher", "role": "Learner", "message": "Homework posted.", "date": "2025-03-27" }
+]
