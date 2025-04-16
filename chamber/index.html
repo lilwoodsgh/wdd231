@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official home of the Accra Chamber of Commerce.">
+  <meta name="author" content="Patamiah Elorm Godwin">
+  <title>Accra Chamber of Commerce - Home</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <meta property="og:title" content="Accra Chamber of Commerce - Home">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/social-preview.png">
+  <meta property="og:url" content="http://Accrachamber.com/index.html">
+  <link rel="stylesheet" href="styles/home.css">
+  <script src="scripts/home.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.jpg" alt="Logo" style="height: 50px;">
+      <h1>Accra Chamber of Commerce</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="images/10.jpg" alt="Accra Business Community">
+    <div class="hero-text">
+      <h2>Welcome to the Accra Chamber of Commerce</h2>
+      <p>Strengthening businesses and fostering growth in the Accra community.</p>
+      <a href="join.html" class="cta-button">Join the Chamber</a>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="events">
+    <h2>Upcoming Events</h2>
+    <ul>
+      <li><strong>April 20:</strong> Small Business Networking Meetup</li>
+      <li><strong>May 5:</strong> Annual Business Expo at Accra Mall</li>
+    </ul>
+  </section>
+
+  <!-- Weather Section -->
+  <section class="weather">
+    <h2>Current Weather</h2>
+    <div id="weather-info">
+      <!-- populated by JS -->
+    </div>
+  </section>
+
+  <!-- Business Spotlights -->
+  <section class="spotlights">
+    <h2>Member Spotlights</h2>
+    <div class="spotlight-card">
+      <h3>Auto House Bortianor</h3>
+      <p>Your trusted auto parts dealer in Accra.</p>
+    </div>
+    <div class="spotlight-card">
+      <h3>Elora Eatery</h3>
+      <p>Home of delicious meals and local flavors.</p>
+    </div>
+    <div class="spotlight-card">
+      <h3>Luxury Beach Resort</h3>
+      <p>Your weekend getaway by the Atlantic Ocean.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Accra Chamber of Commerce</p>
+    <p>House No. 5 Proton Str, Bortianor, Accra</p>
+    <p>Email: <a href="mailto:info@accrachamber.org">info@accrachamber.org</a> | Phone: +233 560 477 204</p>
+    <div class="social-icons">
+      <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
+      <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
+      <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+    </div>
+    <p id="last-modified"></p>
+    <script>
+      document.getElementById('last-modified').textContent = `Last Updated: ${document.lastModified}`;
+    </script>
+  </footer>
+
+</body>
+</html>

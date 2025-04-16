@@ -26,13 +26,29 @@ function toggleView(view) {
 function displayFooterInfo() {
   const year = new Date().getFullYear();
   document.querySelector('#copyright-year').textContent = year;
-  document.querySelector('#last-modified').textContent = document.lastModified;
+  document.querySelector('#last-modified').textContent = `Last Updated: ${document.lastModified}`;
 }
 
-// Event listeners
-document.querySelector('#grid-view').addEventListener('click', () => toggleView('grid'));
-document.querySelector('#list-view').addEventListener('click', () => toggleView('list'));
+// Display mock weather data
+function displayWeatherInfo() {
+  const weatherBox = document.getElementById('weather-info');
+  if (weatherBox) {
+    weatherBox.innerHTML = `
+      <p>🌤️ 29°C, Partly Cloudy</p>
+      <p>Humidity: 65%</p>
+    `;
+  } else {
+    console.error('Weather info element not found!');
+  }
+}
 
-// Initialize
-fetchMembers();
-displayFooterInfo();
+// Event listeners for grid and list views
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector('#grid-view').addEventListener('click', () => toggleView('grid'));
+  document.querySelector('#list-view').addEventListener('click', () => toggleView('list'));
+
+  // Initialize functions after DOM is fully loaded
+  fetchMembers();
+  displayFooterInfo();
+  displayWeatherInfo();
+});
