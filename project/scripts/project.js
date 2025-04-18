@@ -106,4 +106,49 @@ document.addEventListener("DOMContentLoaded", () => {
       form.reset();
     }
   });
+
+  // Fetch and display active courses
+  fetch("data/courses.json")
+    .then(response => response.json())
+    .then(data => {
+      const coursesCard = document.querySelector(".stats-cards .card:nth-child(1) h3");
+      coursesCard.textContent = data.activeCourses;
+    })
+    .catch(error => console.error("Error loading courses:", error));
+
+  // Fetch and display upcoming deadlines
+  fetch("data/deadlines.json")
+    .then(response => response.json())
+    .then(data => {
+      const deadlinesCard = document.querySelector(".stats-cards .card:nth-child(2) h3");
+      deadlinesCard.textContent = data.upcomingDeadlines;
+    })
+    .catch(error => console.error("Error loading deadlines:", error));
+
+  // Fetch and display new messages
+  fetch("data/messages.json")
+    .then(response => response.json())
+    .then(data => {
+      const messagesCard = document.querySelector(".stats-cards .card:nth-child(3) h3");
+      messagesCard.textContent = data.newMessages;
+    })
+    .catch(error => console.error("Error loading messages:", error));
+
+  // Fetch and display average grade
+  fetch("data/grades.json")
+    .then(response => response.json())
+    .then(data => {
+      const gradesCard = document.querySelector(".stats-cards .card:nth-child(4) h3");
+      gradesCard.textContent = data.averageGrade;
+    })
+    .catch(error => console.error("Error loading grades:", error));
+
+  const menuToggle = document.getElementById("menu-toggle");
+  const mainNav = document.getElementById("main-nav");
+
+  menuToggle.addEventListener("click", () => {
+    const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", !isExpanded);
+    mainNav.classList.toggle("show");
+  });
 });

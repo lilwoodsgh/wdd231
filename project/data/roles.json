@@ -1,0 +1,7 @@
+{
+  "roles": [
+    { "value": "learner", "label": "Learner" },
+    { "value": "teacher", "label": "Teacher" },
+    { "value": "admin", "label": "Admin" }
+  ]
+}

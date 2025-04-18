@@ -2,27 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="View and manage messages and notifications on EduConnect." />
   <title>EduConnect | Messages</title>
   <link rel="stylesheet" href="styles/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <script type="module" src="scripts/project.js"></script>
-  <script type="module" src="scripts/messages.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" defer></script>
+  <script type="module" src="scripts/project.js" defer></script>
+  <script type="module" src="scripts/messages.js" defer></script>
+  <script src="scripts/lazyload.js" defer></script>
+  <script src="scripts/theme-toggle.js" defer></script>
+  <script src="scripts/menu-toggle.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="logo">EduConnect</div>
-    <nav>
-      <a href="home.html">Home</a>
-      <a href="login.html">Dashboard</a>
-      <a href="messages.html">Messages</a>
-      <a href="profiles.html">Student Profiles</a>
-      <a href="reports.html">Reports</a>
-      <a href="settings.html">Settings</a>
+    <a href="#main-content" class="skip-link">Skip to Content</a>
+    <h1 class="logo">EduConnect</h1>
+
+    <!-- Hamburger Menu Button -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <!-- Navigation Menu -->
+    <nav id="main-nav" aria-label="Main Navigation">
+      <ul>
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="login.html" id="dashboard-link">Dashboard</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="profiles.html">Student Profiles</a></li>
+        <li><a href="reports.html">Reports</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
     </nav>
-    <div class="user-profile">Profile</div>
   </header>
 
-  <main class="messages-page">
+  <main class="messages-page" id="main-content">
     <div class="page-title">
       <h2>📨 Messages & Notifications</h2>
     </div>
@@ -30,20 +45,19 @@
     <div class="messages-grid">
       <!-- Messages List -->
       <section class="card messages-list">
-        <h3><i class="fas fa-bullhorn"></i> All Messages</h3>
-        <ul id="messageList">
-          <!-- Placeholder message -->
-          <li class="placeholder">No messages to display. Start by composing a new message!</li>
+        <h3><i class="fas fa-bullhorn" aria-hidden="true"></i> All Messages</h3>
+        <ul id="messageList" aria-label="List of messages" aria-live="polite">
+          <li class="placeholder">No messages yet. Compose a new one!</li>
         </ul>
       </section>
 
       <!-- New Message Form -->
       <section class="card message-form">
-        <h3><i class="fas fa-paper-plane"></i> Compose Message</h3>
+        <h3><i class="fas fa-paper-plane" aria-hidden="true"></i> Compose Message</h3>
         <form id="messageForm">
-          <label for="recipient">📌 Recipient:</label>
-          <select id="recipient" required>
-            <option value="">-- Choose --</option>
+          <label for="recipient">Recipient:</label>
+          <select id="recipient" aria-label="Select recipient" required>
+            <option value="">-- Select a Recipient --</option>
             <option value="Parent">Parent</option>
             <option value="Management">Management</option>
             <option value="Learner">Learner</option>
@@ -52,34 +66,37 @@
             <option value="General">General Announcement</option>
           </select>
 
-          <label for="messageText">💬 Message:</label>
-          <textarea id="messageText" rows="5" placeholder="Type your message here..." required></textarea>
+          <label for="messageText">Message:</label>
+          <textarea id="messageText" rows="5" placeholder="Type your message here..." aria-label="Message text" required></textarea>
 
-          <button type="submit" class="primary-btn"><i class="fas fa-paper-plane"></i> Send</button>
+          <button type="submit" class="primary-btn" aria-label="Send message">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i> Send
+          </button>
         </form>
       </section>
     </div>
   </main>
 
   <!-- Modal for Message Details -->
-  <div id="messageModal" class="modal">
+  <div id="messageModal" role="dialog" aria-labelledby="modalMessageContent" aria-hidden="true" style="display: none;">
     <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <h2>Message Details</h2>
-      <p id="modalText"></p>
+      <span class="close-btn" aria-label="Close modal" role="button" tabindex="0" type="button">&times;</span>
+      <p id="modalMessageContent"></p>
     </div>
   </div>
 
+  <!-- Footer -->
   <footer>
-    <p>Contact Info: info@educonnect.com | Privacy Policy | Terms of Service</p>
-    <p>Last Modified: 
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          const modified = new Date(document.lastModified);
-          document.querySelector('footer p:last-child').textContent = `Last Modified: ${modified.toLocaleDateString()} ${modified.toLocaleTimeString()}`;
-        });
-      </script>
-    </p>
+    <p>Contact Info: info@educonnect.com | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    <p>Last Updated on: <span id="last-modified"></span></p>
   </footer>
+
+  <script>
+    // Update last modified date
+    document.addEventListener('DOMContentLoaded', () => {
+      const modified = new Date(document.lastModified);
+      document.getElementById('last-modified').textContent = `${modified.toLocaleDateString()} ${modified.toLocaleTimeString()}`;
+    });
+  </script>
 </body>
 </html>

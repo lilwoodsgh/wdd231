@@ -3,67 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Welcome to EduConnect. Manage education resources and student records.">
-  <meta name="author" content="Patamiah Elorm Godwin">
+  <meta name="description" content="Welcome to EduConnect. Manage education resources and student records." />
+  <meta name="author" content="Patamiah Elorm Godwin" />
   <title>EduConnect | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  
   <link rel="stylesheet" href="styles/styles.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" defer></script>
   <script src="scripts/project.js" defer></script>
-  <script>
-    document.getElementById("dashboard-link").addEventListener("click", () => {
-      window.location.href = "login.html";
-    });
-  </script>
+  <script src="scripts/lazyload.js" defer></script>
+  <script src="scripts/theme-toggle.js" defer></script>
+  <script src="scripts/menu-toggle.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="logo">EduConnect</div>
+    <a href="#main-content" class="skip-link">Skip to Content</a>
+    <h1 class="logo">EduConnect</h1>
 
-    <nav id="main-nav">
-      <a href="home.html" class="active">Home</a>
-      <a href="login.html" id="dashboard-link">Dashboard</a>
-      <a href="messages.html">Messages</a>
-      <a href="#">Student Profiles</a>
-      <a href="#">Reports</a>
-      <a href="#">Settings</a>
+    <!-- Hamburger Menu Button -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <!-- Navigation Menu -->
+    <nav id="main-nav" aria-label="Main Navigation">
+      <ul>
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="login.html" id="dashboard-link">Dashboard</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="profiles.html">Student Profiles</a></li>
+        <li><a href="reports.html">Reports</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
     </nav>
-
-    <div class="header-actions">
-      <div class="user-profile">Profile</div>
-      <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
-      <div id="menu-toggle" class="menu-toggle">&#9776;</div>
-    </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="dashboard">
       <h2>Welcome to EduConnect</h2>
       <p>Manage everything from student records to communication and reports in one centralized platform.</p>
-      <ul>
-        <li><i class="fas fa-user-graduate"></i> <strong>Students:</strong> <span id="student-count">120</span></li>
-        <li><i class="fas fa-calendar-alt"></i> <strong>Upcoming Deadlines:</strong> <span id="deadline-count">5</span></li>
-        <li><i class="fas fa-envelope"></i> <strong>Unread Messages:</strong> <span id="message-count">2</span></li>
+      <ul aria-live="polite">
+        <li>
+          <i class="fas fa-user-graduate" aria-hidden="true"></i>
+          <strong>Students:</strong> <span id="student-count">120</span>
+        </li>
+        <li>
+          <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+          <strong>Upcoming Deadlines:</strong> <span id="deadline-count">5</span>
+        </li>
+        <li>
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <strong>Unread Messages:</strong> <span id="message-count">2</span>
+        </li>
       </ul>
     </section>
 
     <aside class="sidebar">
       <h3>Quick Links</h3>
-      <a href="#"><i class="fas fa-users"></i> View Students</a>
-      <a href="#"><i class="fas fa-chalkboard-teacher"></i> View Teachers</a>
-      <a href="#"><i class="fas fa-calendar"></i> Events</a>
-      <a href="#"><i class="fas fa-paper-plane"></i> Send Message</a>
-      <a href="#"><i class="fas fa-file-alt"></i> View Reports</a>
+      <ul aria-label="Quick Links">
+        <li><a href="#"><i class="fas fa-users" aria-hidden="true"></i> View Students</a></li>
+        <li><a href="#"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> View Teachers</a></li>
+        <li><a href="#"><i class="fas fa-calendar" aria-hidden="true"></i> Events</a></li>
+        <li><a href="#"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message</a></li>
+        <li><a href="#"><i class="fas fa-file-alt" aria-hidden="true"></i> View Reports</a></li>
+      </ul>
     </aside>
   </main>
 
   <footer>
-    <p>Contact Info: info@educonnect.com | Privacy Policy | Terms of Service</p>
-    <p>Last Modified: <script>
-      const modified = new Date(document.lastModified);
-      document.write(`${modified.toLocaleDateString()} ${modified.toLocaleTimeString()}`);
-    </script></p>
+    <p>Contact Info: info@educonnect.com | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    <p>Last Updated: <span id="last-modified"></span></p>
   </footer>
+
+  <script>
+    // Update last modified date
+    document.getElementById("last-modified").textContent = new Date(document.lastModified).toLocaleString();
+  </script>
 </body>
 </html>

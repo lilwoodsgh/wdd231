@@ -2,70 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Learner Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learner Dashboard for managing courses, deadlines, and messages." />
+  <title>EduConnect | Learner Dashboard</title>
   <link rel="stylesheet" href="styles/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" defer></script>
+  <script src="scripts/project.js" defer></script>
+  <script src="scripts/lazyload.js" defer></script>
+  <script src="scripts/theme-toggle.js" defer></script>
+  <script src="scripts/student.js" defer></script>
+  <script src="scripts/menu-toggle.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="logo">EduConnect</div>
-    <nav>
-      <a href="home.html">Home</a>
-      <a href="login.html" onclick="logout()">Logout</a>
+    <a href="#main-content" class="skip-link">Skip to Content</a>
+    <h1 class="logo">EduConnect</h1>
+
+    <!-- Hamburger Menu Button -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <!-- Navigation Menu -->
+    <nav id="main-nav" aria-label="Main Navigation">
+      <ul>
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="login.html" id="dashboard-link">Dashboard</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="profiles.html">Student Profiles</a></li>
+        <li><a href="reports.html">Reports</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
     </nav>
   </header>
 
-  <h2 style="padding: 1rem;">Welcome, Learner!</h2>
+  <main id="main-content">
+    <h2 class="welcome-message">Welcome, Learner!</h2>
 
-  <section class="stats-cards">
-    <div class="card">
-      <i class="fas fa-book"></i>
-      <h3>5</h3>
-      <p>Active Courses</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-calendar-alt"></i>
-      <h3>3</h3>
-      <p>Upcoming Deadlines</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-envelope"></i>
-      <h3>4</h3>
-      <p>New Messages</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-graduation-cap"></i>
-      <h3>B+</h3>
-      <p>Average Grade</p>
-    </div>
-  </section>
+    <section class="stats-cards" aria-live="polite">
+      <div class="card">
+        <i class="fas fa-book" aria-hidden="true" aria-label="Active Courses"></i>
+        <h3>5</h3>
+        <p>Active Courses</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-calendar-alt" aria-hidden="true" aria-label="Upcoming Deadlines"></i>
+        <h3>3</h3>
+        <p>Upcoming Deadlines</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-envelope" aria-hidden="true" aria-label="New Messages"></i>
+        <h3>4</h3>
+        <p>New Messages</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-graduation-cap" aria-hidden="true" aria-label="Average Grade"></i>
+        <h3>B+</h3>
+        <p>Average Grade</p>
+      </div>
+    </section>
 
-  <section class="dashboard-sections">
-    <div class="section">
-      <h3>📚 Upcoming Assignments</h3>
-      <p>No pending tasks. Good job!</p>
-    </div>
-    <div class="section">
-      <h3>✉️ Recent Messages</h3>
-      <p>2 unread messages from your instructors.</p>
-    </div>
-  </section>
+    <section class="dashboard-sections">
+      <div class="section">
+        <h3>📚 Upcoming Assignments</h3>
+        <p>No pending tasks. Good job!</p>
+      </div>
+      <div class="section">
+        <h3>✉️ Recent Messages</h3>
+        <p>2 unread messages from your instructors. <a href="messages.html">View Messages</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact Info: info@educonnect.com | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    <p>Last Updated: <span id="last-modified"></span></p>
+  </footer>
 
   <script>
+    // Update last modified date
+    document.addEventListener('DOMContentLoaded', () => {
+      const modified = new Date(document.lastModified);
+      document.getElementById('last-modified').textContent = `${modified.toLocaleDateString()} ${modified.toLocaleTimeString()}`;
+    });
+
+    // Redirect if user role is not set
     if (!localStorage.getItem("userRole")) window.location.href = "login.html";
+
     function logout() {
       localStorage.removeItem("userRole");
       window.location.href = "home.html";
     }
   </script>
 </body>
-</html>
-</body>
-<footer>
-    <p>Contact Info: info@educonnect.com | Privacy Policy | Terms of Service</p>
-    <p>Last Modified: <script>
-      const modified = new Date(document.lastModified);
-      document.write(`${modified.toLocaleDateString()} ${modified.toLocaleTimeString()}`);
-    </script></p>
-  </footer>
 </html>

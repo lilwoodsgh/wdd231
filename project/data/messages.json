@@ -14,4 +14,10 @@
   { "id": 13, "sender": "Management", "role": "Teacher", "message": "Budget review next week.", "date": "2025-03-29" },
   { "id": 14, "sender": "Admin", "role": "Parent", "message": "Student performance updates.", "date": "2025-03-28" },
   { "id": 15, "sender": "Teacher", "role": "Learner", "message": "Homework posted.", "date": "2025-03-27" }
-]
+],
+{
+  "activeCourses": 5,
+  "upcomingDeadlines": 3,
+  "newMessages": 4,
+  "averageGrade": "B+"
+}

@@ -2,37 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Login to EduConnect to manage your education resources." />
   <title>EduConnect | Login</title>
   <link rel="stylesheet" href="styles/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" defer></script>
+  <script src="scripts/project.js" defer></script>
+  <script src="scripts/login.js" defer></script>
 </head>
 <body>
-  <div class="login-page">
-    <div class="login-container">
-      <h2>🔐 Login to EduConnect</h2>
-      <label for="role">Select your role:</label>
-      <select id="role">
-        <option value="">-- Choose your role --</option>
-        <option value="learner">Learner</option>
-        <option value="teacher">Teacher</option>
-        <option value="admin">Admin</option>
-      </select>
-      <button id="login-btn">Login</button>
-    </div>
-  </div>
+  <header>
+    <h1 class="logo">EduConnect</h1>
+    <p class="tagline">Your gateway to smarter education management</p>
+  </header>
+
+  <main>
+    <section class="login-page">
+      <div class="login-container" aria-live="polite">
+        <h2>🔐 Login to EduConnect</h2>
+        <form id="login-form">
+          <label for="role">Select your role:</label>
+          <select id="role" aria-label="Select your role">
+            <option value="">-- Select your role --</option>
+            <option value="learner">Learner</option>
+            <option value="teacher">Teacher</option>
+            <option value="admin">Admin</option>
+          </select>
+          <button id="login-btn" type="button" aria-label="Login">Login</button>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>Contact Info: info@educonnect.com | Privacy Policy | Terms of Service</p>
-    <p>Last Modified: <script>
-      const modified = new Date(document.lastModified);
-      document.write(`${modified.toLocaleDateString()} ${modified.toLocaleTimeString()}`);
-    </script></p>
+    <p>Contact Info: info@educonnect.com | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    <p>Last Updated: <span id="last-modified"></span></p>
   </footer>
 
   <script>
+    // Update last modified date
+    document.getElementById("last-modified").textContent = new Date(document.lastModified).toLocaleString();
+
+    // Login functionality
     document.getElementById("login-btn").addEventListener("click", () => {
       const role = document.getElementById("role").value;
       if (!role) {
-        alert("Please select a role to login.");
+        alert("Please select your role before logging in.");
         return;
       }
       localStorage.setItem("userRole", role);

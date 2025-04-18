@@ -2,71 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="styles/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" defer></script>
+  <script src="scripts/project.js" defer></script>
+  <script src="scripts/lazyload.js" defer></script>
+  <script src="scripts/logout.js" defer></script>
+  <script src="scripts/menu-toggle.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="logo">EduConnect</div>
-    <nav>
-      <a href="home.html">Home</a>
-      <a href="login.html" onclick="logout()">Logout</a>
+    <a href="#main-content" class="skip-link">Skip to Content</a>
+    <h1 class="logo">EduConnect</h1>
+
+    <!-- Hamburger Menu Button -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <!-- Navigation Menu -->
+    <nav id="main-nav" aria-label="Main Navigation">
+      <ul>
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="login.html" id="dashboard-link">Dashboard</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="profiles.html">Student Profiles</a></li>
+        <li><a href="reports.html">Reports</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
     </nav>
   </header>
 
-  <h2 style="padding: 1rem;">Welcome, Admin!</h2>
+  <main id="main-content">
+    <h2 class="welcome-message">Welcome, Admin!</h2>
 
-  <section class="stats-cards">
-    <div class="card">
-      <i class="fas fa-user-graduate"></i>
-      <h3>320</h3>
-      <p>Total Students</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-user-tie"></i>
-      <h3>35</h3>
-      <p>Teachers</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-envelope"></i>
-      <h3>12</h3>
-      <p>New Messages</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-file-alt"></i>
-      <h3>8</h3>
-      <p>Reports Pending</p>
-    </div>
-  </section>
+    <section class="stats-cards" aria-live="polite">
+      <div class="card">
+        <i class="fas fa-user-graduate" aria-hidden="true" aria-label="Total Students"></i>
+        <h3>320</h3>
+        <p>Total Students</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-user-tie" aria-hidden="true" aria-label="Teachers"></i>
+        <h3>35</h3>
+        <p>Teachers</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-envelope" aria-hidden="true" aria-label="New Messages"></i>
+        <h3>12</h3>
+        <p>New Messages</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-file-alt" aria-hidden="true" aria-label="Reports Pending"></i>
+        <h3>8</h3>
+        <p>Reports Pending</p>
+      </div>
+    </section>
 
-  <section class="dashboard-sections">
-    <div class="section">
-      <h3>📊 System Overview</h3>
-      <p>All systems operational. No incidents reported.</p>
-    </div>
-    <div class="section">
-      <h3>🗂 Recent Logs</h3>
-      <p>User activity and logins from past 24hrs.</p>
-    </div>
-  </section>
+    <section class="dashboard-sections lazy-section">
+      <div class="section">
+        <h3>📊 System Overview</h3>
+        <p>All systems operational. No incidents reported.</p>
+      </div>
+      <div class="section">
+        <h3>🗂 Recent Logs</h3>
+        <p>User activity and logins from past 24hrs.</p>
+      </div>
+    </section>
+
+    <section class="images-section lazy-section">
+      <img data-src="images/student.jpg" alt="Student Profile Picture" loading="lazy" />
+      <img data-src="images/teacher.jpg" alt="Teacher Profile Picture" loading="lazy" />
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact Info: info@educonnect.com | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    <p>Last Updated: <span id="last-modified"></span></p>
+  </footer>
 
   <script>
-    if (!localStorage.getItem("userRole")) window.location.href = "login.html";
+    // Update last modified date
+    document.getElementById("last-modified").textContent = new Date(document.lastModified).toLocaleString();
+
+    // Lazy loading for sections
+    document.addEventListener("DOMContentLoaded", () => {
+      const lazySections = document.querySelectorAll(".lazy-section");
+
+      const sectionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const section = entry.target;
+            section.classList.add("visible"); // Add a class to make it visible
+            observer.unobserve(section);
+          }
+        });
+      });
+
+      lazySections.forEach(section => {
+        sectionObserver.observe(section);
+      });
+    });
+
+    // Logout functionality
     function logout() {
       localStorage.removeItem("userRole");
       window.location.href = "home.html";
     }
   </script>
-</body>
-</html>
-
-  <footer>
-    <p>Contact Info: info@educonnect.com | Privacy Policy | Terms of Service</p>
-    <p>Last Modified: <script>
-      const modified = new Date(document.lastModified);
-      document.write(`${modified.toLocaleDateString()} ${modified.toLocaleTimeString()}`);
-    </script></p>
-  </footer>
 </body>
 </html>
