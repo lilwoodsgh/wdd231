@@ -654,6 +654,46 @@ form textarea:focus {
   background: #357ab7;
 }
 
+/* Login Page Styling for Large Screens */
+@media (min-width: 1024px) {
+  .login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4a90e2, #357ab7); /* Updated background */
+  }
+
+  .login-container {
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow for large screens */
+    text-align: center;
+    width: 400px; /* Increased width for larger screens */
+  }
+
+  .login-container h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem; /* Larger font size for headings */
+    color: #333;
+  }
+
+  .login-container label {
+    font-size: 1rem; /* Adjusted label font size */
+    color: #555;
+  }
+
+  .login-container select,
+  .login-container button {
+    font-size: 1.1rem; /* Slightly larger font size for inputs and buttons */
+  }
+
+  .login-container button {
+    padding: 1rem 1.5rem; /* Increased padding for buttons */
+  }
+}
+
 /* Modal Styling */
 #messageModal {
   position: fixed;

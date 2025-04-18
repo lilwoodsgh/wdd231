@@ -75,7 +75,32 @@ function handleFormSubmit(event) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadMessages();
+  const messageList = document.getElementById('messageList');
+
+  // Simulate fetching messages (replace with actual API call)
+  fetch('/api/messages')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to fetch messages');
+      }
+      return response.json();
+    })
+    .then(messages => {
+      messageList.innerHTML = ''; // Clear placeholder
+      if (messages.length === 0) {
+        messageList.innerHTML = '<li>No messages available.</li>';
+      } else {
+        messages.forEach(message => {
+          const li = document.createElement('li');
+          li.textContent = message.content; // Adjust based on API response structure
+          messageList.appendChild(li);
+        });
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      messageList.innerHTML = '<li>Failed to load messages. Please try again later.</li>';
+    });
 
   const closeBtn = document.querySelector(".close-btn");
   closeBtn.addEventListener("click", closeModal);
